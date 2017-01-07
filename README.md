@@ -19,6 +19,12 @@ of building the application
 
 More on stack can be found on [the stack homepage].
 
+Some useful development options:
+* `stack build --test --fast --file-watch` will execute the tests every time
+  a file changes.
+* `stack ghci --test` Load all files, including tests, so individual tests can
+  also be executed.
+
 How to use.
 ----------
 TODO
