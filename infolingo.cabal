@@ -17,6 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib, MarkdownParser, FileHandling
   build-depends:       base >= 4.7 && < 5
+                     , blaze-html
                      , directory
                      , filepath
                      , pandoc

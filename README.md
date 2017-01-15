@@ -11,6 +11,7 @@ How to build
 ------------
 InfoLingo is build with the help of _stack_. So it used the standard conventions
 of building the application
+
 * `stack setup` to get all dependencies and make sure GHC is installed.
 * `stack build` to create binaries.
 * `stack test` to run all the tests.
@@ -20,6 +21,7 @@ of building the application
 More on stack can be found on [the stack homepage].
 
 Some useful development options:
+
 * `stack build --test --fast --file-watch` will execute the tests every time
   a file changes.
 * `stack ghci --test` Load all files, including tests, so individual tests can
@@ -27,7 +29,7 @@ Some useful development options:
 
 How to use.
 ----------
-TODO
+
 
 Requirements
 ------------

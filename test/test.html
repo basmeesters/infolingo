@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="example.css" type="text/css" />
+</head>
+<body>
+<h1 id="infolingo">Infolingo</h1>
+<h2 id="introduction">Introduction</h2>
+<p>InfoLingo is a small DSL allowing users to create their own wiki. It allows the user to focus on the content, rather than the layout. A wiki is automatically generated from the given articles.</p>
+<h2 id="how-to-build">How to build</h2>
+<p>InfoLingo is build with the help of <em>stack</em>. So it used the standard conventions of building the application</p>
+<ul>
+<li><code>stack setup</code> to get all dependencies and make sure GHC is installed.</li>
+<li><code>stack build</code> to create binaries.</li>
+<li><code>stack test</code> to run all the tests.</li>
+<li><code>stack ghci</code> launch a REPL to test code snippets</li>
+<li><code>stack exec</code> to launch the application</li>
+</ul>
+<p>More on stack can be found on <a href="https://docs.haskellstack.org/en/stable/GUIDE/">the stack homepage</a>.</p>
+<p>Some useful development options:</p>
+<ul>
+<li><code>stack build --test --fast --file-watch</code> will execute the tests every time a file changes.</li>
+<li><code>stack ghci --test</code> Load all files, including tests, so individual tests can also be executed.</li>
+</ul>
+<h2 id="how-to-use.">How to use.</h2>
+<p>TODO</p>
+<h2 id="requirements">Requirements</h2>
+<p>The requirements can be broken down to into a few different topics. Foremost I found the lack of a over-coupling application in which you can manage multiple knowledge files - or <em>articles</em> as I would like to name them. So the first topic is concerned with the organization of multiple files, and mostly how to organize it using other text files.</p>
+<p>The second topic is related to the creation of individual files. How to effectively write down the knowledge you want to save. Since a universal language already exists to represent such files I decided to also go with markdown. It is easy to read, universally accepted, and many parsers and converters are already present. As a result <a href="http://pandoc.org/">Pandoc</a> was chosen to parse the individual files.</p>
+<p>The third topic is mostly concerned with representing the created <em>articles</em>. As pandoc is able to create HTML this is the primary format. On top of that some web pages need to be present to navigate between different articles and search for keywords among all of them.</p>
+<h3 id="organization-of-the-whole">Organization of the whole</h3>
+<ul>
+<li>Have a small DSL on top of markdown to organize articles.</li>
+<li>It should be possible to group different articles by categories/tags or something similar.</li>
+<li>Different files can be grouped as one article. This should effect how it will be displayed as well.</li>
+<li>It should be clear which directories will be parsed and how that will effect the organization.</li>
+<li>When parsing for an individual article failes it should not effect other articles.</li>
+</ul>
+<h3 id="organization-of-individual-files">Organization of individual files</h3>
+<ul>
+<li>Individual articles should follow the <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a> format so they can be easily parsed and converted to another format when required.</li>
+</ul>
+<h3 id="presentation-of-files">Presentation of files</h3>
+<ul>
+<li>Though Pandoc supports conversion from Markdown to numerous other formats, the main target is HTML.</li>
+<li>The main page should make it possible to show all articles and navigate to them.</li>
+<li>It should also be possible to find articles given a certain tag or category.</li>
+<li>The individual articles should remain visible close to the HTML counterpart, but some CSS and JavaScript is added to enrich the user experience. E.g.</li>
+<li>Make it possible to expand collapse headers.</li>
+<li>Provide a <em>table of contents</em> from headers.</li>
+<li>Separate contents of headers in different 'tabs' when required. For example when an article becomes to big.</li>
+</ul>
+<h3 id="possible-future-features">Possible future features</h3>
+<ul>
+<li>An software architecture DSL to describe a software breakdown and a way to visualize the result.</li>
+<li>A mathematics DSL. Similar to the software arcitecture one but concerned with writing down and representing math.</li>
+<li>An editor usable from the web</li>
+<li>With syntax highlighting.</li>
+<li>Show error line.</li>
+<li>On the fly compile.</li>
+<li>advanced search through different articles at once.</li>
+<li>Article history control to go back and forth between different versions of the same article.</li>
+<li>Different kind of HTML and CSS formatting.</li>
+<li>File normalization</li>
+<li>Uppercase letters</li>
+<li>Double spaces</li>
+<li>Breakdown after 80 characters.</li>
+<li>Compile to</li>
+<li>PDF</li>
+<li>Epub</li>
+<li>Document composition (extend)</li>
+</ul>
+</body>
+</html>
